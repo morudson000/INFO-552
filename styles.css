@@ -91,6 +91,21 @@ header {
     box-sizing: border-box;
     break-inside: avoid;
 }
+.masonry-item img {
+    max-width: 50%;
+    max-height: 50%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+.masonry-item h2 {
+    font-size: 1.5em;
+    margin: 0;
+}
+.masonry-item p {
+    font-size: 1em;
+    margin: 10px 0;
+}
 
 
 /* Flexbox */
