@@ -121,11 +121,11 @@ header {
 }
 
 .flex-container>div {
-    background-color: #FFA59E;
+    background-color: #F4F9E9;
     text-align: left;
     padding: 10px;
     font-size: 15px;
-    border: 1px solid #003E1F;
+    border: 3px solid #003E1F;
     width: 500px;
     margin: 0px;
 }
