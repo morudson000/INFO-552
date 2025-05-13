@@ -83,7 +83,7 @@ header {
 
 .masonry-item {
     background: #F4F9E9;
-    border: 1px solid #003E1F;
+    border: 3px solid #003E1F;
     margin-bottom: 20px;
     padding: 15px;
     display: inline-block;
@@ -121,7 +121,7 @@ header {
 }
 
 .flex-container>div {
-    background-color: #F4F9E9;
+    background-color: #FFA59E;
     text-align: left;
     padding: 10px;
     font-size: 15px;
