@@ -1,0 +1,410 @@
+/* ========== Base Reset & Fonts ========== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    font-family: Merriweather, serif;
+    background-color: #4E7C59;
+    color: #2E2E2E;
+    line-height: 1.7;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Poppins, sans-serif;
+    color: #2E2E2E;
+    text-align: center;
+}
+
+/* ========== Shared Elements ========== */
+img {
+    display: block;
+    margin: 1rem auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1rem 2rem;
+}
+
+section {
+    margin-bottom: 3rem;
+    background-color: #FDF6EC;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+p {
+    margin-bottom: 20px;
+    text-align: left; 
+}
+
+/* ========== Header ========== */
+header {
+    background-color: #2E2E2E;
+    color: #FDF6EC;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-links a {
+    color: #FDF6EC;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+}
+
+.nav-links a:hover {
+    background-color: #3f3f3f;
+    border-radius: 4px;
+}
+
+/* ========== Dropdown Menu ========== */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #6C7A89;
+    border: 1px solid #2E2E2E;
+    top: 100%;
+    left: 0;
+    flex-direction: column;
+    min-width: 180px;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown:hover .dropdown-menu {
+    display: flex;
+}
+
+.dropdown-menu,
+.dropdown-menu ul,
+.dropdown-menu li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    color: #FDF6EC;
+    font-size: 1rem;
+    line-height: 1.5;
+    white-space: nowrap;
+}
+
+.dropdown-menu a:hover {
+    background-color: #2E2E2E;
+}
+
+.dropdown > a {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #FDF6EC;
+    text-decoration: none;
+    line-height: 1.5;
+    /* Add any other styles from .nav-links a */
+}
+
+/* ========== Mobile Styles ========== */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: #FDF6EC;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: #2E2E2E;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out;
+    }
+
+    .nav-links.active {
+        max-height: 500px;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: none;
+    }
+
+    .dropdown.active .dropdown-menu {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/* ========== Homepage Section ========== */
+.homepage-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.section-preview {
+    background-color: #FDF6EC;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* ========== Buttons ========== */
+.button-link {
+    background-color: #D4A017;
+    color: #2E2E2E;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+}
+
+.button-link:hover {
+    background-color: #3f3f3f;
+    color: #FDF6EC;
+}
+
+/* ========== Palette Boxes ========== */
+.palette {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.color-box {
+    width: 60px;
+    height: 60px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+}
+
+.color-box:hover {
+    transform: scale(1.05);
+}
+
+/* ========== Blog Page ========== */
+.blog-container,
+.contact-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #FDF6EC;
+    color: #2E2E2E;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.blog-post {
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 1.5rem;
+}
+
+.blog-image {
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 1rem auto;
+    display: block;
+}
+
+/* ========== Blog Lists ========== */
+.blog-post ul,
+.blog-post ol {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+
+.blog-post ul {
+    list-style: none;
+}
+
+.blog-post ul li {
+    position: relative;
+    padding-left: 1.25rem;
+    margin-bottom: 0.75rem;
+    color: #333;
+}
+
+.blog-post ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #2E2E2E;
+    font-size: 1.2rem;
+}
+
+.blog-post ol {
+    counter-reset: custom-counter;
+    list-style: none;
+    background-color: #f8f8f8;
+    border-left: 4px solid #2E2E2E;
+    padding: 1rem;
+    border-radius: 6px;
+}
+
+.blog-post ol li {
+    position: relative;
+    padding-left: 2rem;
+    counter-increment: custom-counter;
+    margin-bottom: 0.75rem;
+}
+
+.blog-post ol li::before {
+    content: counter(custom-counter) ".";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #2E2E2E;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* ========== Contact Form ========== */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-form label {
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 0.75rem;
+    border: 1px solid #D4A017;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.contact-form button {
+    background-color: #2E2E2E;
+    color: #FDF6EC;
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #444;
+}
+
+.form-success {
+    display: none;
+    margin-top: 1rem;
+    color: green;
+    font-weight: bold;
+}
+
+/* ========== Footer ========== */
+.site-footer {
+    background-color: #2E2E2E;
+    color: #FDF6EC;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+}
+
+.site-footer a {
+    color: #FDF6EC;
+    text-decoration: none;
+    margin: 0 0.5rem;
+}
+
+.site-footer a:hover {
+    text-decoration: underline;
+}
+
+/* ========== Responsive Tweaks ========== */
+@media (max-width: 600px) {
+
+    .contact-container,
+    .blog-container {
+        padding: 1rem;
+    }
+
+    .blog-image {
+        max-height: 250px;
+    }
+
+    .blog-post h2 {
+        font-size: 1.25rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 1rem;
+    }
+}
+
+a[href^="http"] {
+    color: #D4A017; /* Replace with your desired color */
+    text-decoration: underline; /* Optional: keeps underline for clarity */
+}
